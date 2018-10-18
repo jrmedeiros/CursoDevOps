@@ -1,0 +1,5 @@
+---
+- name: heaiuheiuasheua
+  hosts: all
+  roles:
+   - default
