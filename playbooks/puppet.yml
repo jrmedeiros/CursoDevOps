@@ -1,0 +1,6 @@
+---
+- name: Instala o puppet agent em todas as maquinas
+  hosts: all
+  roles:
+   - puppet
+

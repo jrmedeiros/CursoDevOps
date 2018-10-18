@@ -1,0 +1,13 @@
+---
+- name: adicionando pacotes
+  hosts: devops docker
+  tasks:
+   - name: instalando o vim
+     #Verificar qual modulo serve para cada SO, apt ou yum, depende da distribuicao
+     #Novo modulo, package, identifica qual eh a distribuicao
+     package:
+      name: vim
+      #Present garante que esteja, abstem remove
+      state: present
+      #update_cache: yes
+

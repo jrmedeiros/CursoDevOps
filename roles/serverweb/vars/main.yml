@@ -1,0 +1,6 @@
+---
+# vars file for serverweb
+pacotes_debian: ['vim', 'htop', 'cowsay', 'figlet', 'tree', 'apache2']
+pacotes_centos: ['vim', 'htop', 'cowsay', 'figlet', 'tree', 'httpd', 'epel-release']
+time: 'Palmeiras'
+

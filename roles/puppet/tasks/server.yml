@@ -1,0 +1,7 @@
+---
+- name: Instala o agente do puppet em todos os servidores
+  package: 
+   name: puppetserver
+   state: present
+  when: ansible_hostname == hostserver
+  notify: puppet restart redhat

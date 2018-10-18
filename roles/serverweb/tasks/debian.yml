@@ -1,0 +1,6 @@
+---
+- name: Pacotes padroes para maquinas debian
+  package:
+   name: "{{pacotes_debian}}"
+   update_cache: yes
+   state: present

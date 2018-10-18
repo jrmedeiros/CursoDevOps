@@ -1,0 +1,8 @@
+---
+- name: Instalando puppet-agent em todos os servidores
+  package: 
+   name: puppet-agent
+   update_cache: yes
+   #O state por padrao ele ja eh present
+   state: present
+  notify: puppet restart redhat

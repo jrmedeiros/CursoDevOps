@@ -1,0 +1,10 @@
+---
+- name: Pacotes padroes para maquinas debian
+  package:
+   name:
+    - figlet
+    - cowsay
+    - htop
+    - sysstat
+   update_chache: yes
+   state: present

@@ -1,0 +1,9 @@
+---
+- name: Copiando arquivos padroes para as maquinas, templates
+  #O modulo copy nao faz substituicao de variaveis
+  template:
+   src: "{{item.origem}}"
+   dest: "{{item.destino}}"
+  with_items:
+   - { origem: templates/index, destino: /var/www/html/index.html}
+  notify: restart apache centos

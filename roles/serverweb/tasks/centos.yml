@@ -1,0 +1,5 @@
+---
+- name: Pacotes padroes para maquinas CentOS
+  package:
+   name: "{{pacotes_centos}}"
+   state: present

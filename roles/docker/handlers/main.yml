@@ -1,0 +1,6 @@
+---
+# handlers file for docker
+- name: Inicia Servico do Docker
+  systemd:
+   state: started
+   name: docker

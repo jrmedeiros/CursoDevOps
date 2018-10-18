@@ -1,0 +1,25 @@
+---
+- name: playbook de instalacao do apache
+  hosts: all
+  tasks: 
+  - name: usuarios comuns do sistema
+    user:
+     name: "{{item}}"
+     password: '$1$yuch7EgE$cgnvQ5izB4d6LUmMlBJe00'
+     shell: /bin/bash
+    with_items:
+     - devops
+     - developer
+     - junior
+
+  - name: instalando apache2
+    package:
+     name: apache2
+     state: present
+    when: ansible_os_family == "Debian"
+
+  - name: instalando http
+    package:
+     name: httpd
+     state: present
+    when: ansible_os_family == "RedHat"

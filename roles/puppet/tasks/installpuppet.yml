@@ -1,0 +1,11 @@
+---
+- name: Instala o agente do puppet em todos os servidores
+  package: 
+   name: puppet-agent
+   state: present
+
+- name: Instala o agente do puppet em todos os servidores
+  package: 
+   name: puppet-agent
+   state: present
+  when: ansible_hostname == "devops"

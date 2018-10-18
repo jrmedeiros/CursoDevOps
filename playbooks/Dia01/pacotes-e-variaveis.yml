@@ -1,0 +1,27 @@
+---
+#Chamada: ansible-playbook -e "maquina=docker devops" pacotes-e-variaveis.yml
+- name: instalando pacotes com variaveis
+  hosts: "{{maquina}}"
+  vars:
+     #Executa na máquina default, ou seja, local, ou pode ser visto em ansible -m setup
+   - maquina: default
+   - pacotes: ['vim', 'htop', 'cowsay', 'figlet', 'tree']
+  tasks:
+   - name: Instalando pacotes Debian
+     package:
+      name: "{{item}}"
+      state: present
+     with_items:
+      - "{{pacotes}}"
+      - apache2
+     when: ansible_os_family == "Debian"
+
+   - name: Instalando pacotes em Redhat
+     package:
+      name: "{{item}}"
+      state: present
+     with_items:
+      - "{{pacotes}}"
+      - epel-release
+      - httpd
+     when: ansible_os_family == "RedHat"

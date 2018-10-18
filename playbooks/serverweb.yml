@@ -1,0 +1,5 @@
+---
+- name: Executa a role de criacao de um servidor web
+  hosts: all
+  roles:
+   - serverweb

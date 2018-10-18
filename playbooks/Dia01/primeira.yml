@@ -1,0 +1,15 @@
+---
+  #Nome da playbook
+- name: minha primeira playbook
+  #Em quais hosts a playbook irá rodar
+  hosts: all
+  #Quais tarefas eu vou executar, os modulos que irá executar, existem mais de 3 mil
+  tasks: 
+   #Nome da tasks
+   - name: adicionando usuario devops
+     user: 
+      #Parametros do modulo user
+      name: devops
+      password: '$1$yuch7EgE$cgnvQ5izB4d6LUmMlBJe00'
+      shell: /bin/bash
+      comment: Usuario Devops

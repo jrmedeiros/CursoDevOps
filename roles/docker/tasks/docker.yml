@@ -1,0 +1,11 @@
+---
+- name: Verifica se o Docker ja esta instalado
+  shell: systemctl list-unit-files  | grep -c docker.service
+  register: verifica_servico
+  
+- name: Instalando docker em todos os servidores
+  shell: |
+   curl -fsSL https://get.docker.com -o get-docker.sh
+   sh get-docker.sh
+  when: "verifica_servico.rc != 0"
+  notify: Inicia Servico do Docker

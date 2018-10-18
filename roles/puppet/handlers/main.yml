@@ -1,0 +1,8 @@
+---
+# handlers file for puppet
+- name: puppet restart redhat
+  service:
+   name: puppet
+   state: restarted
+   comment: Iniciando o servico do puppet quando o servidor for redhat
+  when: ansible_os_family == "RedHat"

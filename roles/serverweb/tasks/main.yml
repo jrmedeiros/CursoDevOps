@@ -1,0 +1,13 @@
+---
+#Tasks file for serverweb
+
+- name: pacotes padroes para debian
+  include: debian.yml
+  when: ansible_os_family == "Debian"
+
+- name: pacotes padroes para debian
+  include: centos.yml
+  when: ansible_os_family == "RedHat"
+
+- name: Copia arquivos para todas as maquinas 
+  include: arquivo.yml

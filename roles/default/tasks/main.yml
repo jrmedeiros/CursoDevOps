@@ -1,0 +1,16 @@
+---
+#Tasks file for default
+
+- name: Playbook de usuarios padroes
+  include: user.yml
+
+- name: pacotes padroes para debian
+  include: debian.yml
+  when: ansible_os_family == "Debian"
+
+- name: pacotes padroes para debian
+  include: centos.yml
+  when: ansible_os_family == "RedHat"
+
+- name: arquivos padroes para todas as maquinas
+  include: arquivo.yml
